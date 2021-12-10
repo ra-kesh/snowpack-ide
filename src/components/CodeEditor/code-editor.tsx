@@ -1,5 +1,5 @@
 import './code-editor.css';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import MonacoEditor, { OnMount, OnChange, Monaco } from '@monaco-editor/react';
 import prettier from 'prettier';
 import parser from 'prettier/parser-babel';
@@ -20,6 +20,7 @@ interface CodeEditorProps {
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   const editorRef = useRef<any>();
+  const [theme, setTheme] = useState('vs-dark');
 
   const onEditorDidMount: OnMount = (editor) => {
     editorRef.current = editor;
@@ -74,14 +75,27 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   return (
     <>
       <div className="editor-wrapper">
-        <button onClick={onClickPretty} className="button-format">
-          pretty
-        </button>
+        <div className="menu-wrapper">
+          <select
+            name="theme"
+            id="theme"
+            onChange={(e) => setTheme(e.target.value)}
+          >
+            <option value="vs-dark">Dark</option>
+            <option value="vs-light">light</option>
+          </select>
+          <button
+            onClick={onClickPretty}
+            // className="button-format"
+          >
+            prettify
+          </button>
+        </div>
         <MonacoEditor
           onMount={onEditorDidMount}
           onChange={onChange}
           value={initialValue}
-          theme="vs-dark"
+          theme={theme}
           language="javascript"
           height="100%"
           options={{
