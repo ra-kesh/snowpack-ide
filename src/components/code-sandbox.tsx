@@ -12,16 +12,17 @@ function CodeSandbox() {
     setCode(output);
   };
 
-  // const tempCode = `import React from 'react';
-  // import ReactDom from 'react-dom';
-  // const App =()=><h1>Hey babe</h1>
-  // ReactDom.render(<App/>,document.querySelector('#root'))
-  // `
-  // console.log(code);
+  const tempCode = `
+  import React from 'react';
+  import ReactDom from 'react-dom';
+  const App =()=><h1>Hello world</h1>
+  ReactDom.render(<App/>,document.querySelector('#root'))
+  `;
+
   return (
     <div>
       <CodeEditor
-        initialValue="//build break repeat"
+        initialValue={tempCode}
         onChange={(value: any) => setInput(value)}
       />
       <div>

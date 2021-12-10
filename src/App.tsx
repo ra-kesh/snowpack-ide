@@ -7,7 +7,7 @@ interface AppProps {}
 function App({}: AppProps) {
   return (
     <div className="App">
-      <h1>Sasta Sandbox</h1>
+      <h1>Run React</h1>
       <CodeSandbox />
     </div>
   );
