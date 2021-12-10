@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import CodeEditor from './code-editor';
-import Preview from './preview';
-import bundle from '../bundler/bundle';
-import Resizable from './resizable';
+import CodeEditor from '../CodeEditor/code-editor';
+import Preview from '../CodePreview/preview';
+import bundle from '../../bundler/bundle';
+import Resizable from '../Resizable/resizable';
 
 function CodeSandbox() {
   const [code, setCode] = useState('');

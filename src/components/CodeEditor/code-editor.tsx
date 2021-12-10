@@ -72,29 +72,31 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   };
 
   return (
-    <div className="editor-wrapper">
-      <button onClick={onClickPretty} className="button-format">
-        pretty
-      </button>
-      <MonacoEditor
-        onMount={onEditorDidMount}
-        onChange={onChange}
-        value={initialValue}
-        theme="vs-dark"
-        language="javascript"
-        height="100%"
-        options={{
-          wordWrap: 'on',
-          minimap: { enabled: false },
-          showUnused: true,
-          folding: false,
-          lineNumbersMinChars: 2,
-          fontSize: 16,
-          scrollBeyondLastLine: false,
-          automaticLayout: true,
-        }}
-      />
-    </div>
+    <>
+      <div className="editor-wrapper">
+        <button onClick={onClickPretty} className="button-format">
+          pretty
+        </button>
+        <MonacoEditor
+          onMount={onEditorDidMount}
+          onChange={onChange}
+          value={initialValue}
+          theme="vs-dark"
+          language="javascript"
+          height="100%"
+          options={{
+            wordWrap: 'on',
+            minimap: { enabled: false },
+            showUnused: true,
+            folding: false,
+            lineNumbersMinChars: 2,
+            fontSize: 16,
+            scrollBeyondLastLine: false,
+            automaticLayout: true,
+          }}
+        />
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import CodeSandbox from './components/code-sandbox';
+import CodeSandbox from './components';
 
 interface AppProps {}
 
