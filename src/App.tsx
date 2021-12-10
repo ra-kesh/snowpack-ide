@@ -17,6 +17,7 @@ function App({}: AppProps) {
           paddingLeft: '1rem',
           fontSize: 'medium',
           fontWeight: 700,
+          marginTop: '.5rem',
         }}
       >
         Version 0.001
