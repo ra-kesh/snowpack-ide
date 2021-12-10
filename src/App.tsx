@@ -7,8 +7,20 @@ interface AppProps {}
 function App({}: AppProps) {
   return (
     <div className="App">
-      <h1>Run React</h1>
+      <div style={{ paddingLeft: '1rem' }}>
+        <h1>Run React ..</h1>
+      </div>
+
       <CodeSandbox />
+      <div
+        style={{
+          paddingLeft: '1rem',
+          fontSize: 'medium',
+          fontWeight: 700,
+        }}
+      >
+        Version 0.001
+      </div>
     </div>
   );
 }

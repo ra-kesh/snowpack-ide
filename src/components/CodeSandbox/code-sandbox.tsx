@@ -46,7 +46,6 @@ function CodeSandbox() {
         </Resizable>
         <Preview code={code} err={err} />
       </div>
-      <div>buit by rakesh</div>
     </>
   );
 }
