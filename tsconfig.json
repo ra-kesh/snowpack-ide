@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types"],
+  "include": ["src", "types", "types.d.ts"],
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",

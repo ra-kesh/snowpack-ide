@@ -1,0 +1,23 @@
+.editor-wrapper {
+  position: relative;
+  height: 94%;
+  width: calc(100% - 15px);
+}
+
+.button-format {
+  padding: 0.5rem 2rem;
+  font-size: small;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0.3rem;
+}
+
+.menu-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 2rem;
+  border: 1px solid gray;
+  padding: 0.2rem 0.2rem;
+  gap: 1rem;
+}

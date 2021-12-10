@@ -7,7 +7,7 @@ const startService = async () => {
   try {
     await esbuild.initialize({
       worker: true,
-      wasmURL: 'https://unpkg.com/esbuild-wasm@latest/esbuild.wasm',
+      wasmURL: 'https://unpkg.com/esbuild-wasm@0.13.8/esbuild.wasm',
     });
     esb = esbuild;
   } catch (error) {
@@ -20,18 +20,27 @@ const bundle = async (rawCode: string) => {
     await startService();
   }
 
-  const result = await esbuild.build({
-    entryPoints: ['index.js'],
-    bundle: true,
-    write: false,
-    plugins: [unpkgPathPlugin(), fetchPlugin(rawCode)],
-    define: {
-      'process.env.NODE_ENV': '"production"',
-      global: 'window',
-    },
-  });
-
-  return result.outputFiles[0].text;
+  try {
+    const result = await esbuild.build({
+      entryPoints: ['index.js'],
+      bundle: true,
+      write: false,
+      plugins: [unpkgPathPlugin(), fetchPlugin(rawCode)],
+      define: {
+        'process.env.NODE_ENV': '"production"',
+        global: 'window',
+      },
+    });
+    return {
+      code: result.outputFiles[0].text,
+      err: '',
+    };
+  } catch (error: any) {
+    return {
+      code: '',
+      err: error.message,
+    };
+  }
 };
 
 export default bundle;

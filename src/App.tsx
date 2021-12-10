@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import CodeSandbox from './components/code-sandbox';
+import CodeSandbox from './components';
 
 interface AppProps {}
 
 function App({}: AppProps) {
   return (
     <div className="App">
-      <h1>Sasta Sandbox</h1>
+      <div style={{ paddingLeft: '1rem' }}>
+        <h1>Run React ..</h1>
+      </div>
+
       <CodeSandbox />
+      <div
+        style={{
+          paddingLeft: '1rem',
+          fontSize: 'medium',
+          fontWeight: 700,
+        }}
+      >
+        Version 0.001
+      </div>
     </div>
   );
 }
