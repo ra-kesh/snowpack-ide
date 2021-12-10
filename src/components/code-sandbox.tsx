@@ -1,35 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CodeEditor from './code-editor';
 import Preview from './preview';
 import bundle from '../bundler/bundle';
+import Resizable from './resizable';
 
 function CodeSandbox() {
-  const [input, setInput] = useState('');
   const [code, setCode] = useState('');
+  const [err, setErr] = useState('');
+  const [input, setInput] = useState('');
 
-  const clickHandler = async () => {
-    const output = await bundle(input);
-    setCode(output);
-  };
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      const output = await bundle(input);
+      setCode(output.code);
+      setErr(output.err);
+    }, 750);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [input]);
 
   const tempCode = `
-  import React from 'react';
-  import ReactDom from 'react-dom';
-  const App =()=><h1>Hello world</h1>
-  ReactDom.render(<App/>,document.querySelector('#root'))
+  // import React from 'react';
+  // import ReactDom from 'react-dom';
+  // const App =()=><h1>Hello world</h1>
+  // ReactDom.render(<App/>,document.querySelector('#root'))
   `;
 
   return (
-    <div>
-      <CodeEditor
-        initialValue={tempCode}
-        onChange={(value: any) => setInput(value)}
-      />
-      <div>
-        <button onClick={clickHandler}>submit</button>
+    <>
+      <div
+        style={{
+          height: '85vh',
+          display: 'flex',
+          flexDirection: 'row',
+          width: '99%',
+        }}
+      >
+        <Resizable direction="horizontal">
+          <CodeEditor
+            initialValue={tempCode}
+            onChange={(value: any) => setInput(value)}
+          />
+        </Resizable>
+        <Preview code={code} err={err} />
       </div>
-      <Preview code={code} />
-    </div>
+      <div>buit by rakesh</div>
+    </>
   );
 }
 
