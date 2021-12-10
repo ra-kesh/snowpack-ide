@@ -1,13 +1,22 @@
-import "./code-editor.css";
-import React, { useRef } from "react";
-import MonacoEditor, { OnMount, OnChange } from "@monaco-editor/react";
-import prettier from "prettier";
-import parser from "prettier/parser-babel";
+import './code-editor.css';
+import React, { useRef } from 'react';
+import MonacoEditor, { OnMount, OnChange, Monaco } from '@monaco-editor/react';
+import prettier from 'prettier';
+import parser from 'prettier/parser-babel';
+// import { parse } from '@babel/parser';
+// import traverse from '@babel/traverse';
+// import MonacoJSXHighlighter from 'monaco-jsx-highlighter';
 
 interface CodeEditorProps {
   initialValue: string;
   onChange: OnChange;
 }
+
+// const babelParse = (code: string) =>
+//   parse(code, {
+//     sourceType: 'module',
+//     plugins: ['jsx'],
+//   });
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   const editorRef = useRef<any>();
@@ -16,7 +25,34 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     editorRef.current = editor;
     editor.getModel()?.updateOptions({ tabSize: 2 });
 
-    // todo syntax highlighting
+    // to be done highlighting
+
+    // Instantiate the highlighter
+    // const monacoJSXHighlighter = new MonacoJSXHighlighter(
+    //   // @ts-ignore
+    //   Monaco,
+    //   babelParse,
+    //   traverse,
+    // );
+
+    // Activate highlighting (debounceTime default: 100ms)
+    // monacoJSXHighlighter.highLightOnDidChangeModelContent(100);
+    // Activate JSX commenting
+    // monacoJSXHighlighter.addJSXCommentCommand();
+    // // Done =)
+
+    // const highlighter = new Highlighter(
+    //   // @ts-ignore
+    //   window.monaco,
+    //   codeShift,
+    //   editor,
+    // );
+    // highlighter.highLightOnDidChangeModelContent(
+    //   () => {},
+    //   () => {},
+    //   undefined,
+    //   () => {},
+    // );
   };
 
   const onClickPretty = () => {
@@ -24,13 +60,13 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
 
     const prettyCode = prettier
       .format(uglyCode, {
-        parser: "babel",
+        parser: 'babel',
         plugins: [parser],
         useTabs: false,
         semi: true,
         singleQuote: true,
       })
-      .replace(/\n$/, "");
+      .replace(/\n$/, '');
 
     editorRef.current.setValue(prettyCode);
   };
@@ -46,9 +82,9 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
         value={initialValue}
         theme="vs-dark"
         language="javascript"
-        height="500px"
+        height="100%"
         options={{
-          wordWrap: "on",
+          wordWrap: 'on',
           minimap: { enabled: false },
           showUnused: true,
           folding: false,
