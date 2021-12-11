@@ -27,7 +27,7 @@ function App({}: AppProps) {
           display: 'flex',
           justifyContent: 'flex-start',
           alignItems: 'center',
-          padding: '.3rem 1rem 0',
+          padding: '.2rem 1rem ',
         }}
       >
         v0.001 - for desktops
