@@ -7,7 +7,7 @@ interface AppProps {}
 function App({}: AppProps) {
   return (
     <div className="App">
-      <div style={{ paddingLeft: '1rem' }}>
+      <div style={{ paddingLeft: '1rem', height: '3.5rem' }}>
         <h1>Run React ..</h1>
       </div>
 
@@ -20,7 +20,7 @@ function App({}: AppProps) {
           marginTop: '.5rem',
         }}
       >
-        Version 0.001
+        v0.001 - for desktops
       </div>
     </div>
   );
