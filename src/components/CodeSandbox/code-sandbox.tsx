@@ -3,7 +3,20 @@ import CodeEditor from '../CodeEditor/code-editor';
 import Preview from '../CodePreview/preview';
 import bundle from '../../bundler/bundle';
 import Resizable from '../Resizable/resizable';
-import { ExampleOne } from '../../data/ExampleOne';
+
+const ExampleOne = `
+  // import React from 'react';
+  // import ReactDom from 'react-dom';
+
+
+  // const App =()=>{
+  //   return(
+  //     <h1 style={{textAlign:'center'}}>Run React</h1>
+  //   )
+  // }
+
+
+  // ReactDom.render(<App/>,document.querySelector('#root'))`;
 
 function CodeSandbox() {
   const [code, setCode] = useState('');
