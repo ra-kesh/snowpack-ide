@@ -3,6 +3,7 @@ import CodeEditor from '../CodeEditor/code-editor';
 import Preview from '../CodePreview/preview';
 import bundle from '../../bundler/bundle';
 import Resizable from '../Resizable/resizable';
+import { ExampleOne } from '../../data/ExampleOne';
 
 function CodeSandbox() {
   const [code, setCode] = useState('');
@@ -21,13 +22,6 @@ function CodeSandbox() {
     };
   }, [input]);
 
-  const tempCode = `
-  // import React from 'react';
-  // import ReactDom from 'react-dom';
-  // const App =()=><h1>Hello world</h1>
-  // ReactDom.render(<App/>,document.querySelector('#root'))
-  `;
-
   return (
     <>
       <div
@@ -40,7 +34,7 @@ function CodeSandbox() {
       >
         <Resizable direction="horizontal">
           <CodeEditor
-            initialValue={tempCode}
+            initialValue={ExampleOne}
             onChange={(value: any) => setInput(value)}
           />
         </Resizable>
