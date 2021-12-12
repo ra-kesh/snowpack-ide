@@ -1,25 +1,53 @@
-# New Project
+<div id='top'></div>
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
 
-## Available Scripts
 
-### npm start
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+<h1 align="center">Run React - Frontend</h1>
 
-### npm run build
+<br/>
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
+## Links
 
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.mjs` config file.
+| frontend        | backend    | Live     |
+| :---             |     :---      |          :--- |
+|  https://github.com/ra-kesh/snowpack-ide | --- | https://runreact.netlify.app/     |
 
-### npm test
 
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This is an codesandbox like application that can run react on the webbrowser by fetching npm packages from unpkg and bundling them with esbuild 
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+### Built With
+
+* [React.js](https://reactjs.org/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<div>
+   <img src='https://cdn.discordapp.com/attachments/809508401758732288/919624109682458724/kvm1fVeAR5.png'>
+ <p align="right">(<a href="#top">back to top</a>)</p>
+    <img src='https://cdn.discordapp.com/attachments/809508401758732288/919624109426618378/BFC4N6KlxA.png'>
+ <p align="right">(<a href="#top">back to top</a>)</p>
+    <img src='https://cdn.discordapp.com/attachments/809508401758732288/919624109074305125/cArNVuSts1.png'>
+ <p align="right">(<a href="#top">back to top</a>)</p>
+   <img src='https://cdn.discordapp.com/attachments/809508401758732288/919624453263077526/RNyLienWra.png'>
+ <p align="right">(<a href="#top">back to top</a>)</p>
+ 
+  
+
+</div>
+
